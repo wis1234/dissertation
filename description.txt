@@ -1,0 +1,13 @@
+dissertation description
+
+**********
+
+
+**********
+
+i want to create an api. here are the tables structure
+users(firstname, lastname, email,  phone, google_id, phone_code, secret_key,  password)
+student(user_id, student_firstname, student_lastname, student_phone, student_email, ac_level, mat_number,identifier )
+teacher(user_id, teacher_firstname, teacher_lastname, teacher_phone, teacher_email, grade, mat_number, speciality, subject_title, identifier )
+complaint( student_id, complain_type, claimant_firstname, claimant_lastname, claimant_phone, claimant_email, subject_title, description,
+ exam_type, payment_proof, status, result, ac_year,)
