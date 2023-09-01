@@ -262,8 +262,9 @@ class UserController extends Controller
             // Authentication was successful, redirect to a specific route
             return Redirect::to('dissertation_UI/index_redirect.html');
         } else {
+            $message= "Invalid credentials";
             // Authentication failed, redirect back with an error message
-            return Redirect::back()->withErrors(['message' => 'Invalid credentials']);
+            return Redirect::back()->withErrors(['login_error' => $message]);
         }
     }
 

@@ -255,62 +255,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+  //dial box js
+// Get the modal and link elements
+var modal = document.getElementById("login-modal");
+var reclamationLink = document.getElementById("reclamation-link");
+var closeButton = document.getElementsByClassName("close")[0];
+var loginButton = document.getElementById("login-button");
 
-  // //handling registration form
+// Show the modal when clicking on the "Reclamation" link
+reclamationLink.onclick = function() {
+    modal.style.display = "block";
+};
 
-  // // document.getElementById('register').addEventListener('click', function () {
-  // //   const formData = {
-  // //     firstname: document.getElementById('firstname').value,
-  // //     lastname: document.getElementById('lastname').value,
-  // //     matricule: document.getElementById('matricule').value,
-  // //     email: document.getElementById('email').value,
-  // //     phone: document.getElementById('phone').value,
-  // //     password: document.getElementById('password').value
-  // //   };
-    
-  // //   axios.post('http://127.0.0.1:8001/api/users', formData)
-  // //     .then(response => {
-  // //       // Handle successful response
-  // //       console.log(response.data);
-  // //       // Redirect to a success page or perform other actions
-  // //     })
-  // //     .catch(error => {
-  // //       // Handle error
-  // //       console.error(error);
-  // //       // Display error message or perform other error handling
-  // //     });
-  // // });
+// Close the modal when clicking on the close button
+closeButton.onclick = function() {
+    modal.style.display = "none";
+};
 
+// Close the modal when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
 
-  // document.getElementById('register').addEventListener('submit', async function(event) {
-  //   event.preventDefault();
-  //   console.log('Form submitted')
-
-  //   const formData = new FormData(this);
-  //   const response = await fetch('http://127.0.0.1:8000/api/users', {
-  //     method: 'POST',
-  //     body: formData
-  //   });
-
-  //   if (response.ok) {
-  //     const responseData = await response.json();
-  //     // Handle success response
-  //     console.log('User created successfully:', responseData);
-  //     // You can show a success message to the user here
-  //   } else {
-  //     // Handle error response
-  //     console.error('Error submitting form');
-  //     // You can show an error message to the user here
-  //   }
-  // });
-
-  // document.getElementById('togglePassword').addEventListener('click', function() {
-  //   const passwordInput = document.getElementById('password');
-  //   if (passwordInput.type === 'password') {
-  //     passwordInput.type = 'text';
-  //     this.textContent = 'Hide';
-  //   } else {
-  //     passwordInput.type = 'password';
-  //     this.textContent = 'Show';
-  //   }
-  // });
+// Handle the "Login" button click (you can add your login logic here)
+loginButton.onclick = function() {
+    // Add your login code here or redirect the user to the login page
+    alert("You clicked the Login button");
+};

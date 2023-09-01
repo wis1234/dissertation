@@ -7,6 +7,13 @@
     "button-type": "off",
     "highest-available-document-mode": "off",
     "axe/structure": "off",
-    "axe/name-role-value": "off"
+    "axe/name-role-value": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ],
+    "no-inline-styles": "off"
   }
 }

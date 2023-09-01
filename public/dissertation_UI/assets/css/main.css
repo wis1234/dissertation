@@ -2732,8 +2732,19 @@ header.header nav ul li a {
 
     /* Style the register button */
     .header-buttons .register-button {
-      background-color: red; /* Red color */
+      background-color: rgba(228, 11, 11, 0.712); /* Red color */
     }
+
+        /* Style the logout button */
+        .header-buttons .logout-button {
+          background-color: rgba(228, 11, 11, 0.712); 
+          display: inline-block;
+          /* padding: 10px 20px; */
+          color: white;
+          height: 40px;
+          border-radius: 10px;
+          text-decoration: none;
+        }
 
     .header-buttons a {
       display: inline-block;
