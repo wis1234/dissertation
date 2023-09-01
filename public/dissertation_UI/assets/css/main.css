@@ -19,7 +19,7 @@
 /* Colors */
 :root {
   --color-default: #364d59;
-  --color-primary: #feb900;
+  --color-primary:blue;
   --color-secondary: #52565e;
 }
 
@@ -43,7 +43,7 @@ a {
 }
 
 a:hover {
-  color: #ffc732;
+  color: blue;
   text-decoration: none;
 }
 
@@ -129,7 +129,7 @@ section {
 .breadcrumbs h2 {
   font-size: 56px;
   font-weight: 500;
-  color: #fff;
+  color:#fff;
   font-family: var(--font-secondary);
 }
 
@@ -145,7 +145,8 @@ section {
 }
 
 .breadcrumbs ol a {
-  color: rgba(255, 255, 255, 0.8);
+  /* color: rgba(255, 255, 255, 0.8); */
+  color: blue;
   transition: 0.3s;
 }
 
@@ -188,7 +189,7 @@ section {
 }
 
 .scroll-top:hover {
-  background: #ffc732;
+  background: blue;
   color: #fff;
 }
 
@@ -205,7 +206,7 @@ section {
   inset: 0;
   z-index: 999999;
   overflow: hidden;
-  background: #fff;
+  background:#fff;
   transition: all 0.6s ease-out;
 }
 
@@ -349,11 +350,12 @@ section {
     width: 100%;
   }
 
+  /* color of menu item if mouse over */
   .navbar a:hover,
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #fff;
+    color:black;
   }
 
   .navbar .dropdown ul {
@@ -503,7 +505,7 @@ section {
 
   .mobile-nav-show {
     position: relative;
-    color: #fff;
+    color:black;
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -2693,11 +2695,11 @@ section {
 
 /* Add this CSS rule to set the header background color */
 header.header {
-  background-color: black;
+  background-color: white;
 }
 
 header.header nav ul li a {
-  color: white;
+  color: black;
 }
 
     /* Add this CSS rule to change the color of mobile menu items to gray */
@@ -2709,7 +2711,7 @@ header.header nav ul li a {
 
     /* Add this CSS rule to style the logo */
     .logo img {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* White shadow */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); White shadow */
   border-radius: 8px; /* Rounded corners */
   max-width: 120px; /* Adjust the size as needed */
 }
@@ -2790,3 +2792,10 @@ header.header nav ul li a {
       border: none;
       cursor: pointer;
     }
+
+    /* Change register 2 color */
+    .white-text {
+      color: white;
+    }
+    
+    
