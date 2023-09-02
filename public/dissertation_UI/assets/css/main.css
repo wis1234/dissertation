@@ -670,7 +670,7 @@ section {
 }
 
 .get-started .php-email-form button[type=submit]:hover {
-  background: rgba(254, 185, 0, 0.8);
+  background:blue;
 }
 
 @-webkit-keyframes animate-loading {
@@ -2809,4 +2809,22 @@ header.header nav ul li a {
       color: white;
     }
     
-    
+    /* style to return messages for Message in .contact */
+
+    .sent-message {
+      display: none;
+      color: #fff;
+      background: #059652;
+      text-align: center;
+      padding: 15px;
+      font-weight: 600;
+  }
+  
+  .error-message {
+      display: none;
+      color: #fff;
+      background: #df1529;
+      text-align: left;
+      padding: 15px;
+      font-weight: 600;
+  }

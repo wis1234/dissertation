@@ -7,6 +7,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,12 @@ Route::post('/login', [UserController::class, 'login']);
 
 // User logout
 Route::post('/logout', [UserController::class, 'logout']);
+
+
+
+// Message routing
+Route::get('/messages', [MessageController::class, 'index']);
+Route::post('/messages', [MessageController::class, 'store']);
+Route::get('/messages/{id}', [MessageController::class, 'show']);
+Route::put('/messages/{id}', [MessageController::class, 'update']);
+Route::delete('/messages/{id}', [MessageController::class, 'destroy']);

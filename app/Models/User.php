@@ -40,6 +40,10 @@ class User extends Authenticatable
         return $this->hasOne(Teacher::class);
     }
 
+    public function messages()
+    {
+        return $this->hasMany(Message::class, 'sender_email', 'email');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
