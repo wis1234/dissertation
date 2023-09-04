@@ -104,7 +104,7 @@
       <div class="col-lg-6">
 <!-- Your HTML content, including the form -->
 
-<form action="http://127.0.0.1:8001/api/messages" method="post" role="form" class="php-email-form">
+<form action="https://df6f-156-0-212-41.ngrok-free.app/api/messages" method="post" role="form" class="php-email-form">
   <div class="row gy-4">
       <div class="form-group">
           <input type="email" class="form-control" name="sender_email" id="email" placeholder="Email" required>
@@ -118,7 +118,7 @@
   </div>
   <div class="text-center">
       <button type="submit" id="submitButton">Send Message</button>
-  </div>
+  </div><br><br><br>
   <div id="responseMessage" class="text-center"></div> <!-- This is the message display area -->
 </form>
     </div>
@@ -233,7 +233,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1:8001/api/messages",
+                url: "http://192.168.2.14:8001/api/messages",
                 data: formData,
                 success: function(response) {
                     $("#responseMessage").html('<div class="alert alert-success">' + response.message + '</div>');
