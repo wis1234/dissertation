@@ -7,11 +7,11 @@
   <title>Paiement des frais de réclamation</title>
   <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
   <style>
-    body {
+ body {
       font-family: Arial, sans-serif;
       background-color: #f0f0f0;
-      margin: 10px;
-      padding: 10px;
+      margin: 20px;
+      padding: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,9 +19,9 @@
     }
 
     #embed {
-      /* max-width: 100%; */
+      max-width: 100%;
       width: 100%;
-      height: auto;
+      height: 100%;
     }
 
     @media (max-width: 768px) {
@@ -38,7 +38,7 @@
   <script type="text/javascript">
     FedaPay.init({
       public_key: 'pk_live_NVw62EiQ_Yu6mvPq13vuUapq',
-      "callback_url": "http://192.168.2.14:8001/dissertation_UI/index_redirect.html",
+      "callback_url": "https://dac1-137-255-44-224.ngrok-free.app/dissertation_UI/index_redirect.html",
       transaction: {
         amount: 1200,
         description: 'Acheter mon produit'
