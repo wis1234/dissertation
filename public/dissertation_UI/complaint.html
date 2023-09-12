@@ -31,6 +31,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/my_style1.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: UpConstruction - v1.3.0
@@ -58,116 +59,126 @@
     </div><!-- End Breadcrumbs -->
 
 
-<!-- ======= Registration Form Section ======= -->
-<!-- ======= Registration Form Section ======= -->
-<section id="registration-form" class="registration-form">
-  <!-- First Form -->
-  <div class="container">
-    <!-- the div -->
-    <div class="row">
-      <div class="col-lg-4" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin-right: 10px;">
-        <form action="https://1628-137-255-38-145.ngrok-free.app/api/complaints" method="post" enctype="multipart/form-data">
-          <fieldset>
-            <div class="form-group">
-              <br><br>
-            </div>
-            <div class="form-group">
-              <label for="ac_year">Annee academique:</label>
-              <input type="text" class="form-control" id="ac_year" placeholder="2023-2024" name="ac_year">
-            </div>
-            <div class="form-group">
-              <label for="ac_level">Année d'étude:</label>
-              <select id="ac_level" class="form-control" name="ac_level">
-                <optgroup label="ac">
-                  <option value="Licence 1">Licence 1</option>
-                  <option value="Licence 2">Licence 2</option>
-                  <option value="Licence 3">Licence 3</option>
-                  <option value="Master 1">Master 1</option>
-                  <option value="Master 2">Master 2</option>
-                </optgroup>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="mat">Matricule:</label>
-              <input type="text" name="mat" class="form-control" id="mat" placeholder="17104018">
-            </div>
-            <!-- Partie masquée -->
-            <div class="form-group" >
-              <label for="field">Filière:</label>
-              <select id="field" class="form-control" name="field">
-                <optgroup label="">
-                  <option value="Sciences Economiques">Sciences Economiques</option>
-                  <option value="field">Sciences de Gestion</option>
-                </optgroup>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="speciality">Spécialité:</label>
-              <select id="speciality" class="form-control" name="speciality">
-                <optgroup label="">
-                  <option value="Economie Appliquée">Economie Appliquée</option>
-                  <option value="Economie et Finance des Collectivités Locales">Economie et Finance des Collectivités Locales</option>
-                  <option value="Economie et Gestion des Exploitations Agricoles">Economie et Gestion des Exploitations Agricoles</option>
-                  <option value="Economie et Gestion des Micro-Finances">Economie et Gestion des Micro-Finances</option>
-                  <option value="Statistique et Econometrie">Statistique et Econometrie</option>
-                  <option value="Tronc commun de Licence 1">Tronc commun de Licence 1</option>
-                  <option value="Comptabilité et Finance">Comptabilité et Finance</option>
-                  <option value="Gestion des banques et assurances">Gestion des banques et assurances</option>
-                  <option value="Gestion des ressources humaines">Gestion des ressources humaines</option>
-                  <option value="Marketing et action commerciale">Marketing et action commerciale</option>
-                </optgroup>
-              </select>
-            </div>
-          </fieldset>
+  <!-- ======= Registration Form Section ======= -->
+  <section id="registration-form" class="registration-form">
+    <!-- First Form -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin-right: 10px;">
+          <form action="https://honeybee-right-shortly.ngrok-free.app/api/complaints" method="post" enctype="multipart/form-data">
+            <fieldset>
+              <div class="form-group">
+                <br><br>
+              </div>
+              <div class="form-group">
+                <div class="form-group">
+                  <p>Information personnelle</p>
+                  <label for="ac_year">Année académique:</label>
+                  <select id="ac_year" class="form-control" name="ac_year">
+                    <optgroup label="academic year">
+                      <option value="2022-2023">2022-2023</option>
+                      <option value="2023-2024">2023-2024</option>
+                      <option value="2024-2025">2024-2025</option>
+                      <option value="2025-2026">2025-2026</option>
+                      <option value="2026-2027">2026-2027</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="ac_level">Année d'étude:</label>
+                <select id="ac_level" class="form-control" name="ac_level">
+                  <optgroup label="academic level">
+                    <option value="Licence 1">Licence 1</option>
+                    <option value="Licence 2">Licence 2</option>
+                    <option value="Licence 3">Licence 3</option>
+                    <option value="Master 1">Master 1</option>
+                    <option value="Master 2">Master 2</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="mat">Matricule:</label>
+                <input type="text" name="mat" class="form-control" id="mat" placeholder="17104018" maxlength="8">
+              </div>
+              <!-- Partie masquée -->
+              <div class="form-group" >
+                <label for="field">Filière:</label>
+                <select id="field" class="form-control" name="field">
+                  <optgroup label="">
+                    <option value="Sciences Economiques">Sciences Economiques</option>
+                    <option value="field">Sciences de Gestion</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="speciality">Spécialité:</label>
+                <select id="speciality" class="form-control" name="speciality">
+                  <optgroup label="">
+                    <option value="Economie Appliquée">Economie Appliquée</option>
+                    <option value="Economie et Finance des Collectivités Locales">Economie et Finance des Collectivités Locales</option>
+                    <option value="Economie et Gestion des Exploitations Agricoles">Economie et Gestion des Exploitations Agricoles</option>
+                    <option value="Economie et Gestion des Micro-Finances">Economie et Gestion des Micro-Finances</option>
+                    <option value="Statistique et Econometrie">Statistique et Econometrie</option>
+                    <option value="Tronc commun de Licence 1">Tronc commun de Licence 1</option>
+                    <option value="Comptabilité et Finance">Comptabilité et Finance</option>
+                    <option value="Gestion des banques et assurances">Gestion des banques et assurances</option>
+                    <option value="Gestion des ressources humaines">Gestion des ressources humaines</option>
+                    <option value="Marketing et action commerciale">Marketing et action commerciale</option>
+                  </optgroup>
+                </select>
+              </div>
+            </fieldset>
+          </div>
+          <!-- Second Form -->
+          <div class="col-lg-4" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin-left: 10px;">
+            <fieldset>
+              <div class="form-group">
+                <p>Information de réclamation</p>
+                <label for="exam_type">Session:</label>
+                <select name="exam_type" id="exam_type">
+                  <option value="session normale">session normale</option>
+                  <option value="session de rattrapage">session de rattrapage</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="complain_type">Motif:</label>
+                <select name="complain_type" id="complain_type">
+                  <option value="Contestation de note">Contestation de note</option>
+                  <option value="Omission de note">Omission de note</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ecue_sub">UE:</label>
+                <input type="text" class="form-control" id="ecue_sub" name="ecue_sub" rows="3" placeholder="Unité d'Enseignement">
+              </div>
+              <div>
+                <label for="ecue">ECUE:</label>
+                <input type="text" class="form-control" id="ecue" name="ecue" rows="3" placeholder="Elément Constitutif d'Unité d'Enseignement">
+              </div>
+              <div class="form-group">
+                <label for="fiche_inscription">Fiche d'inscription:</label>
+                <input type="file" class="form-control-file" id="fiche_inscription" name="fiche_inscription" placeholder="Votre fiche de préinscription validée">
+              </div>
+              <div class="form-group">
+                <label for="ue">Quittance:</label>
+                <input type="file" class="form-control-file" id="ue" name="quittance" placeholder="Votre fiche de préinscription validée">
+              </div>
+              <div class="form-group">
+                <label for="bio">Description:</label>
+                <textarea class="form-control" id="bio" name="description" rows="3" placeholder="Briève description du problème"></textarea>
+              </div>
+              <!-- Bouton de soumission -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Suivant</button>
+              </div>
+            </fieldset>
+          </div>
         </div>
-        <!-- Second Form -->
-        <div class="col-lg-4" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin-left: 10px;">
-          <fieldset>
-            <div class="form-group">
-              <label for="exam_type">Session:</label>
-              <select name="exam_type" id="exam_type">
-                <option value="session normale">session normale</option>
-                <option value="session de rattrapage">session de rattrapage</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="complain_type">Motif:</label>
-              <select name="complain_type" id="complain_type">
-                <option value="Contestation de note">Contestation de note</option>
-                <option value="Omission de note">Omission de note</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="ecue_sub">UE:</label>
-              <input type="text" class="form-control" id="ecue_sub" name="ecue_sub" rows="3" placeholder="Unité d'Enseignement">
-            </div>
-            <div>
-              <label for="ecue">ECUE:</label>
-              <input type="text" class="form-control" id="ecue" name="ecue" rows="3" placeholder="Elément Constitutif d'Unité d'Enseignement">
-            </div>
-            <div class="form-group">
-              <label for="fiche_inscription">Fiche d'inscription:</label>
-              <input type="file" class="form-control-file" id="fiche_inscription" name="fiche_inscription" placeholder="Votre fiche de préinscription validée">
-            </div>
-            <div class="form-group">
-              <label for="ue">Quittance:</label>
-              <input type="file" class="form-control-file" id="ue" name="quittance" placeholder="Votre fiche de préinscription validée">
-            </div>
-            <div class="form-group">
-              <label for="bio">Description:</label>
-              <textarea class="form-control" id="bio" name="description" rows="3" placeholder="Briève description du problème"></textarea>
-            </div>
-            <!-- Bouton de soumission -->
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">Suivant</button>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </form>
-  </div>
-</section>
-<!-- End Registration Form Section -->
+      </form>
+    </div>
+  </section>
+  <!-- End Registration Form Section -->
 
 
 
