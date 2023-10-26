@@ -44,6 +44,22 @@ class User extends Authenticatable
     {
         return $this->hasMany(Message::class, 'sender_email', 'email');
     }
+
+    public function transcripts()
+    {
+        return $this->hasMany(Transcript::class, 'user_id');
+    }
+
+    public function certificates()
+    {
+        return $this->hasMany(Certificate::class);
+    }
+
+    public function diplomas()
+{
+    return $this->hasMany(Diploma::class);
+}
+
     /**
      * The attributes that should be hidden for serialization.
      *

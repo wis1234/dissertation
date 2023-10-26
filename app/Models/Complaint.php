@@ -34,6 +34,8 @@ class Complaint extends Model
           'ac_year',
     ];
 
+    // protected $hidden =[         'fiche_inscritpiton'];
+
     public function student()
     {
         return $this->belongsTo(Student::class);

@@ -8,6 +8,14 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\TranscriptController;
+use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\DiplomaController;
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -72,3 +80,42 @@ Route::post('/messages', [MessageController::class, 'store']);
 Route::get('/messages/{id}', [MessageController::class, 'show']);
 Route::put('/messages/{id}', [MessageController::class, 'update']);
 Route::delete('/messages/{id}', [MessageController::class, 'destroy']);
+
+//transcript routing
+Route::group(['prefix' => 'transcripts'], function () {
+    Route::get('/', [TranscriptController::class, 'index']);
+    Route::post('/', [TranscriptController::class, 'store']);
+
+    Route::get('{transcript}', [TranscriptController::class, 'show']);
+    Route::delete('{transcript}', [TranscriptController::class, 'destroy']);
+    Route::put('{transcript}', [TranscriptController::class, 'update']);
+});
+
+//certifcate routing
+Route::get('/certificates', [CertificateController::class, 'index']);
+Route::post('/certificates', [CertificateController::class, 'store']);
+Route::get('/certificates/{certificate}', [CertificateController::class, 'show']);
+Route::put('/certificates/{certificate}', [CertificateController::class, 'update']);
+Route::delete('/certificates/{certificate}', [CertificateController::class, 'destroy']);
+
+// Diploma routing
+Route::group(['prefix' => 'diplomas'], function () {
+    Route::get('/', [DiplomaController::class, 'index']);
+    Route::post('/', [DiplomaController::class, 'store']);
+
+    Route::get('{diploma}', [DiplomaController::class, 'show']);
+    Route::delete('{diploma}', [DiplomaController::class, 'destroy']);
+    Route::put('{diploma}', [DiplomaController::class, 'update']);
+});
+
+
+//Passwor reset routing
+// Request a password reset email
+Route::post('password/reset/request', [PasswordResetController::class, 'requestReset']);
+
+// Verify the reset token
+Route::post('password/reset/verify', [PasswordResetController::class, 'verifyverificationcode']);
+
+// Reset the password
+Route::post('password/reset', [PasswordResetController::class, 'resetPassword']);
+

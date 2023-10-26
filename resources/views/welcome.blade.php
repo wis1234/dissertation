@@ -1,1 +1,1 @@
-An error Occured, check your credentials and try again!
+Here is the home page 
