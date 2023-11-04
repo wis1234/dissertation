@@ -21,27 +21,30 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'firstname' => 'required|string',
-            'lastname' => 'required|string',
-            'email' => 'required|email|unique:users',
-            'phone' => 'required|string',
-            'mat_number' => 'required|string|unique:users',
-            'google_id' => 'nullable|string',
-            'phone_code' => 'nullable|string',
-            'secret_key' => 'nullable|string',
-            'password' => 'required|string|min:6',
-        ]);
+        try {
+            $validatedData = $request->validate([
+                'firstname' => 'required|string',
+                'lastname' => 'required|string',
+                'email' => 'required|email|unique:users',
+                'phone' => 'required|string',
+                'mat_number' => 'required|string|unique:users',
+                'google_id' => 'nullable|string',
+                'phone_code' => 'nullable|string',
+                'secret_key' => 'nullable|string',
+                'password' => 'required|string|min:6',
+            ]);
 
-        $identifier = $this->generateIdentifier($validatedData['firstname'], $validatedData['lastname'], $validatedData['mat_number']);
-        $validatedData['identifier'] = $identifier;
+            $identifier = $this->generateIdentifier($validatedData['firstname'], $validatedData['lastname'], $validatedData['mat_number']);
+            $validatedData['identifier'] = $identifier;
 
-        $user = User::create($validatedData);
+            $user = User::create($validatedData);
 
-        // return response()->json(['message' => 'User created successfully', 'user' => $user], 201);
-
-
-        return redirect('http://localhost/reset/index_redirect.html');
+            // Redirect on successful registration
+            return redirect('http://localhost/reset/index_redirect.html');
+        } catch (\Exception $e) {
+            // Handle the exception and redirect to error.html
+            return redirect('http://localhost/reset/already_exists.html');
+        }
     }
 
     private function generateIdentifier($firstname, $lastname, $mat_number)
@@ -115,19 +118,56 @@ class UserController extends Controller
     }
 
 
+    // public function login(Request $request)
+    // {
+    //     $credentials = $request->only('email', 'password');
+    
+    //     if (Auth::attempt($credentials)) {
+    //         // Authentication was successful, redirect to a specific route
+    //         return redirect('http://localhost/reset/index_redirect.html');
+    //     } else {
+    //         $message = "Invalid credentials";
+    //         // Authentication failed, redirect back with an error message
+    //         return redirect('http://localhost/reset/invalid_credential.html');
+    //     }
+    // }
+
+
+    /**
+     * Handle an authentication attempt.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function login(Request $request)
     {
+        // Validate the user's login input
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
         $credentials = $request->only('email', 'password');
-    
+
         if (Auth::attempt($credentials)) {
-            // Authentication was successful, redirect to a specific route
-            return redirect('http://localhost/reset/index_redirect.html');
+            $user = auth()->user();
+            
+            // Create a new Sanctum token with an expiration time
+            $token = $request->user()->createToken('api-token', ['read']);
+            
+            // Set the token to expire after a certain time (e.g., 30 minutes)
+            $token->plainTextToken;
+            
+            return response()->json([
+                'user' => $user,
+                'access_token' => $token->plainTextToken,
+            ]);
         } else {
-            $message = "Invalid credentials";
-            // Authentication failed, redirect back with an error message
-            return redirect('http://localhost/reset/invalid_credential.html');
+            // Authentication failed, return an error response
+            return response()->json(['message' => 'Invalid credentials'], 401);
         }
     }
+    
     
 
     public function logout(Request $request)

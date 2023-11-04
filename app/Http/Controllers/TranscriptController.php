@@ -44,7 +44,7 @@ class TranscriptController extends Controller
             ]);
 
             if ($validator->fails()) {
-                return response()->json($validator->errors(), 400);
+                return redirect('http://localhost/reset/false_form_filled.html');
             }
 
             // Get user details based on mat

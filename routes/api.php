@@ -32,9 +32,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+
+Route::middleware('auth:sanctum')->group(function () {
+    // Route::get('/users', [UserController::class, 'index']);
+
+});
+Route::middleware('auth:web')->group(function () {
+    // Protected routes that require authentication
+    Route::get('/users', [UserController::class, 'index']);
+    // Add more authenticated routes here
+});
+
 //users routing
-Route::get('/users', [UserController::class, 'index']);
-Route::post('/users', [UserController::class, 'store']);
+// Route::get('/users', [UserController::class, 'index']);
+// Route::post('/users', [UserController::class, 'store']);
 Route::get('/users/{mat_number}', [UserController::class, 'show']);
 Route::put('/users/{mat_number}', [UserController::class, 'update']);
 Route::delete('/users/{mat_number}', [UserController::class, 'destroy']);
